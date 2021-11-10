@@ -25,7 +25,7 @@ const ChooseAvatar: FC<IChooseAvatar> = () => {
     },[])
     return (
         <>
-            <WhiteBox width={72} height={80}>
+            <WhiteBox width={96} height={80}>
                 <div className='flex flex-col space-y-1'>
                     <p className='text-base text-gray-600 text-center'>Ok, <b>mollie andersson</b></p>
                     <p className='text-xs text-center text-gray-600'>Howe this photo</p>
