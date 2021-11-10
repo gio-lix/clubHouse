@@ -1,13 +1,16 @@
-import React, {FC, useEffect, useRef, useState} from "react"
+import React, {FC, useContext, useEffect, useRef, useState} from "react"
 import WhiteBox from "@/components/helperComponents/whitebox";
 import Button from "@/components/helperComponents/button";
 import Avatar from "@/components/helperComponents/avatar";
+import {BsArrowDown} from "react-icons/bs";
+import {MainContext} from "../../../pages";
 
 interface IChooseAvatar {
 
 }
 
 const ChooseAvatar: FC<IChooseAvatar> = () => {
+    const {onNextStep} = useContext(MainContext)
     const [avatarUrl, setAvatarUrl] = useState<string>('');
     const inputFileRef = React.useRef<HTMLInputElement>(null)
 
@@ -33,7 +36,13 @@ const ChooseAvatar: FC<IChooseAvatar> = () => {
                         <Avatar src={avatarUrl} width="120px" height="120px"/>
                     <label className='text-xs text-gray-600 cursor-pointer' htmlFor="image">Choose a different photo </label>
                     <input type="file" id="image" ref={inputFileRef} hidden/>
-                    <Button width={28} text='sent'/>
+                    {/*<Button width="80px" text='sent'/>*/}
+                    <button
+                        onClick={onNextStep}
+                        className={`bg-indigo-500 h-8 w-20 mt-3  flex items-center justify-center space-x-3 text-white rounded-xl`}>
+                        <p className='text-sm '>Next</p>
+                        <BsArrowDown className='w-4  h-4 transform -rotate-90 '/>
+                    </button>
                 </div>
             </WhiteBox>
         </>

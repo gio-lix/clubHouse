@@ -2,7 +2,7 @@ import React, {FC} from "react"
 import {BsArrowDown} from "react-icons/bs";
 
 interface IButton {
-    width: number
+    width: string
     text: string
     disabled?: boolean
     Icon?: any
@@ -18,7 +18,6 @@ const Button: FC<IButton> = ({
                                  text,
                                  disabled
                              }) => {
-    console.log(disabled)
 
     return (
         <>
@@ -26,7 +25,8 @@ const Button: FC<IButton> = ({
                 disabled={disabled}
                 onClick={onClick}
                 type='button'
-                className={`${disabled ? 'bg-indigo-500 bg-opacity-50' : 'bg-indigo-500'} w-${width} h-8  flex items-center justify-center space-x-3 text-white rounded-2xl`}>
+                style={{width}}
+                className={`${disabled ? 'bg-indigo-500 bg-opacity-50' : 'bg-indigo-500'} h-8  flex items-center justify-center space-x-3 text-white rounded-xl`}>
                 {Icon && <Icon/>}
                 <p className='text-sm'>{text}</p>
                 <BsArrowDown className='w-4 h-4 transform -rotate-90 '/>
