@@ -1,8 +1,6 @@
 import React, {FC, useContext, useState} from "react"
 import NumberFormat from 'react-number-format';
-import Button from "@/components/helperComponents/button";
 import WhiteBox from "@/components/helperComponents/whitebox";
-import {ImTwitter} from "react-icons/im";
 import {BsArrowDown} from "react-icons/bs";
 import {MainContext} from "../../../pages";
 

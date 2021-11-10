@@ -20,7 +20,6 @@ const EnterTwitterStep: FC<IEnterTwitterStep> = () => {
                     <div className='w-20 h-20 rounded-2xl my-3 bg-gray-300 flex justify-center items-center '>
                         <p className='text-2xl'>AD</p>
                     </div>
-                    {/*<Button width="200px" text='Import from Twitter' Icon={ImTwitter}/>*/}
                     <button
                         onClick={() => onNextStep()}
                         className={`bg-indigo-500 h-8 w-52 mt-3  flex items-center justify-center space-x-3 text-white rounded-xl`}>

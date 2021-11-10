@@ -1,6 +1,5 @@
 import React, {FC, useContext, useEffect, useRef, useState} from "react"
 import WhiteBox from "@/components/helperComponents/whitebox";
-import Button from "@/components/helperComponents/button";
 import Avatar from "@/components/helperComponents/avatar";
 import {BsArrowDown} from "react-icons/bs";
 import {MainContext} from "../../../pages";
@@ -36,7 +35,6 @@ const ChooseAvatar: FC<IChooseAvatar> = () => {
                         <Avatar src={avatarUrl} width="120px" height="120px"/>
                     <label className='text-xs text-gray-600 cursor-pointer' htmlFor="image">Choose a different photo </label>
                     <input type="file" id="image" ref={inputFileRef} hidden/>
-                    {/*<Button width="80px" text='sent'/>*/}
                     <button
                         onClick={onNextStep}
                         className={`bg-indigo-500 h-8 w-20 mt-3  flex items-center justify-center space-x-3 text-white rounded-xl`}>

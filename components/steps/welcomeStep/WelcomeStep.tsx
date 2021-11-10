@@ -1,6 +1,5 @@
 import React, {FC, useContext} from "react"
 import {MdFrontHand} from 'react-icons/md'
-import Button from "@/components/helperComponents/button";
 import WhiteBox from "@/components/helperComponents/whitebox";
 import {MainContext} from "../../../pages";
 import {BsArrowDown} from "react-icons/bs";
@@ -10,7 +9,6 @@ interface IWelcomeStep {
 }
 const WelcomeStep: FC<IWelcomeStep> = () => {
     const {onNextStep} = useContext(MainContext)
-    console.log(onNextStep)
   return (
      <>
         <WhiteBox width={96} height={60} >
@@ -23,7 +21,6 @@ const WelcomeStep: FC<IWelcomeStep> = () => {
                 up  the finishing youtube, we're adding people gradually  to make sure nothing break.
             </p>
             <div className='flex flex-col items-center justify-center'>
-                {/*<Button width="200px" text='get your username' />*/}
                 <button
                     onClick={() => onNextStep()}
                     className={`bg-indigo-500 h-8 w-44  flex items-center justify-center space-x-3 text-white rounded-xl`}>
