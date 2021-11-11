@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 import Image from "next/image";
 import ProfileHeader from "@/components/page/profile/ProfileHeader";
 import Link from 'next/link'
+import ButtonBack from "@/components/helperComponents/buttonBack";
 
 interface IProfile {
     fullName: string
@@ -19,12 +20,7 @@ const Profile: FC<IProfile> = ({userName,fullName,about,avatarUrl}) => {
          <div className='w-full h-screen border border-black p-10 bg-yellow-100 '>
 
              <ProfileHeader fullName={fullName} />
-             <Link href='/rooms'>
-                 <div className='flex items-center space-x-3'>
-                     <BsArrowLeft/>
-                     <button>Back</button>
-                 </div>
-             </Link>
+            <ButtonBack href='rooms' title='back' />
 
              <div className='flex items-center justify-between my-5'>
                  <div className='flex items-center space-x-4'>
