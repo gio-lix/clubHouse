@@ -9,9 +9,9 @@ const ProfileHeader: FC<IProfileHeader> = ({fullName}) => {
   return (
      <>
          <div className='flex justify-between mb-10'>
-             <div>
+             <button onClick={() => router.push('/')}>
                  <p>Clubhouse</p>
-             </div>
+             </button>
              <div className='flex space-x-2'>
                  <button onClick={() => router.push('/profile/1')}>
                      {fullName}

@@ -18,7 +18,7 @@ const EnterCodeStep: FC<IEnterCodeStep> = () => {
 
 
     const handleChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const index = Number(e.target.getAttribute("id")) - 1
+        const index = Number(e.target.getAttribute("id"))
         const value = e.target.value
 
         setCodes((prev) => {
@@ -49,18 +49,11 @@ const EnterCodeStep: FC<IEnterCodeStep> = () => {
                             <p className='text-sm font-semibold text-center'>Enter your active code</p>
                         </div>
                         <div className='flex justify-center items-center space-x-2 mt-3'>
-                            <input id="1" maxLength={1} value={codes[0]} onChange={handleChangeValue} type="tel"
-                                   placeholder='X'
-                                   className='w-10 h-10 text-center outline-none  border border-gray-600 '/>
-                            <input id="2" maxLength={1} value={codes[1]} onChange={handleChangeValue} type="tel"
-                                   placeholder='X'
-                                   className='w-10 h-10 text-center outline-none  border border-gray-600 '/>
-                            <input id="3" maxLength={1} value={codes[2]} onChange={handleChangeValue} type="tel"
-                                   placeholder='X'
-                                   className='w-10 h-10 text-center outline-none  border border-gray-600 '/>
-                            <input id="4" maxLength={1} value={codes[3]} onChange={handleChangeValue} type="tel"
-                                   placeholder='X'
-                                   className='w-10 h-10 text-center outline-none  border border-gray-600 '/>
+                            {codes.map((item, index) => (
+                                <input key={index} id={String(index)} maxLength={1} value={item} onChange={handleChangeValue} type="tel"
+                                       placeholder='X'
+                                       className='w-10 h-10 text-center outline-none  border border-gray-600 '/>
+                            ))}
                         </div>
                     </div>
                     <div className='flex justify-center'>
